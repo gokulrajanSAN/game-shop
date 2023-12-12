@@ -1,22 +1,46 @@
-@import url("https://fonts.googleapis.com/css2?family=Dhurjati&display=swap");
-.container {
-  display: flex;
-  justify-content: space-between;
-  height: 5rem;
-  padding:0.4rem;
-  background-color: burlywood;
-  align-items: center;
-  font-size: 1.6rem;
-  font-weight: bold;
-  font-family: "Dhurjati", sans-serif;
+
+  @import url('https://fonts.googleapis.com/css2?family=Dhurjati&family=Inter:wght@200&display=swap');
+
+*,::after,::before{
+  box-sizing: border-box;
 }
 
+.icon,.searchInput{
+  padding: 8px 8px 8px 12px;
+}
 .logo {
   width: 4rem;
   border-radius: 15%;
 }
-
+.searchInput{
+  width: 100%;
+  background: 0 0;
+  outline: 0;
+  box-shadow: none;
+  resize: none;
+ border: 0;
+}
 .navItems {
- 
   cursor: pointer;
+}
+.search {
+  min-width: 200px;
+  height: 40px;
+  cursor: pointer;
+  background-color: transparent;
+  display: inline-block;
+  width: 100%;
+  position: relative;
+  border-radius: 8px;
+  background-color: #f0f5ff;
+
+}
+.searchInput::placeholder{
+  font-family: inter_regular,fallback-inter_regular,Arial,sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+}
+.searchForm{
+  display: flex;
+  width:100%
 }

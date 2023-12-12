@@ -1,11 +1,12 @@
-import { Button, ThemeProvider, createTheme } from "@mui/material";
-import "./App.css";
-import Navbar from "./components/navbar/Navbar";
 import { useState } from "react";
+import "./App.css";
+import { CssBaseline, ThemeProvider, createTheme } from "@mui/material";
+import Navbar from "./components/navbar/Navbar";
+import OfferCarousel from "./components/carousel/Carousel";
 
 function App() {
   const [mode, setMode] = useState("light");
-  const handleModeChange = () => setMode(mode === "light" ? "dark" : "light");
+
   const theme = createTheme({
     palette: {
       mode: mode,
@@ -13,20 +14,13 @@ function App() {
   });
   return (
     <ThemeProvider theme={theme}>
-      <div>
-        <Navbar />
-        <Button
-          sx={{
-            bgcolor: "background.default",
-            color: "text.primary",
-            margin: "1rem",
-            "&:hover": { bgcolor: "blue" },
-          }}
-          onClick={handleModeChange}
-        >
-          Change Theme
-        </Button>
-      </div>
+      <CssBaseline />
+      <nav>
+        <Navbar mode={mode} setMode={setMode} />
+      </nav>
+      <body>
+        <OfferCarousel />
+      </body>
     </ThemeProvider>
   );
 }
