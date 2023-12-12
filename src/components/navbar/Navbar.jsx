@@ -1,19 +1,40 @@
 import './Navbar.css'
+import { Button } from "@mui/material";
+import { Box, Typography } from "@mui/material";
+import Brightness4Icon from "@mui/icons-material/Brightness4";
+import Brightness7Icon from "@mui/icons-material/Brightness7";
 
 const navItems = ["Products", "Cart", "Your Orders", "Login"]
 
-const Navbar = () => {
+const Navbar = ({ mode, setmode }) => {
+
+    const themeHandler = () => {
+        setmode(mode === "light" ? "dark" : "light")
+    }
     return (
-        <div className='container'>
-            <div>
-                <img className='logo' src="src\assets\WhatsApp Image 2023-12-08 at 21.58.11.jpeg" alt="logo" />
-            </div>
-            <div className='search'></div>
+        <Box className='container' sx={{
+            bgcolor: "background.default",
+            color: "text.primary",
+            borderRadius: 1,
+            p: 3,
+        }}>
+
+            <img className='logo' src="src\assets\WhatsApp Image 2023-12-08 at 21.58.11.jpeg" alt="logo" />
+
+            <Typography variant="h6" component="div" className='search'>
+                <input placeholder='search' type="text" name="" id="" />
+            </Typography>
+
             {navItems.map(item => {
-                return (<div className='navItems' key={item} >{item}</div>)
+                return (<Typography variant="h6"
+                    component="div" className='navItems' key={item} >{item}</Typography>)
             })}
-            <div>theme</div>
-        </div>
+
+            <Button onClick={themeHandler}>
+                {mode === "light" ? <Brightness4Icon /> : <Brightness7Icon />}
+                </Button>
+
+        </Box>
     )
 }
 

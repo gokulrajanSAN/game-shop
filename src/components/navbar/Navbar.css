@@ -1,17 +1,22 @@
+@import url("https://fonts.googleapis.com/css2?family=Dhurjati&display=swap");
+
 .container {
-    margin: .6rem;
-    padding: .6rem;
+    padding: .4rem;
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    width: auto;
-    height: 4rem;
+    height: 5rem;
     background-color: burlywood;
+    align-items: center;
+    font-size: 1.6rem;
+    font-weight: bold;
+    font-family: "Dhurjati", sans-serif;
 }
 
 .logo {
-    /* height: 4rem; */
     width: 4rem;
+    border-radius: 15%;
 }
 
-.navItems {}
+.navItems {
+    cursor: pointer;
+}

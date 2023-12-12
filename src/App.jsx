@@ -1,12 +1,25 @@
+import { useState } from 'react'
 import './App.css'
-import Navbar from './components/navbar/Navbar'
+import { ThemeProvider, createTheme } from "@mui/material";
+import Navbar from './components/navbar/navbar';
+
 
 function App() {
 
+  const [mode, setmode] = useState("light")
+
+  const theme = createTheme({
+    palette: {
+      mode: mode
+    }
+  })
+
   return (
-    <div>
-      <Navbar/>
-    </div>
+    <ThemeProvider theme={theme}>
+      <div>
+        <Navbar mode={mode} setmode={setmode} />
+      </div>
+    </ThemeProvider>
   )
 }
 
