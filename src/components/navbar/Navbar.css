@@ -1,5 +1,6 @@
 .container {
-
+    margin: .6rem;
+    padding: .6rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -13,6 +14,4 @@
     width: 4rem;
 }
 
-.navItems {
-    
-}
+.navItems {}
