@@ -1,9 +1,13 @@
 /* eslint-disable react/no-unknown-property */
-import { Box, Button, IconButton, Input, Typography } from "@mui/material";
+import { Box, IconButton } from "@mui/material";
+import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined";
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
+import StorefrontOutlinedIcon from "@mui/icons-material/StorefrontOutlined";
+import MoreVertOutlinedIcon from "@mui/icons-material/MoreVertOutlined";
 import "./Navbar.css";
 import SearchIcon from "@mui/icons-material/Search";
 
-const navItems = ["Products", "Cart", "Your Orders", "Login"];
 const Logo = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -133,10 +137,14 @@ const Logo = () => (
   </svg>
 );
 
-const Navbar = ({ mode, setMode }) => {
-  const handleModeChange = () => setMode(mode === "light" ? "dark" : "light");
+const Navbar = () => {
   return (
-    <Box sx={{ display: "flex", gap: "12px", padding: "12px" }}>
+    <Box
+      sx={{
+        display: "flex",
+        padding: "12px",
+      }}
+    >
       <div className="iconContainer">
         <Logo />
       </div>
@@ -153,7 +161,25 @@ const Navbar = ({ mode, setMode }) => {
           />
         </form>
       </div>
-      <div className="nav-items"></div>
+      <div className="nav-items">
+        <button className="loginButton">
+          <AccountCircleOutlinedIcon className="accountIcon" />
+          <div className="longText"> Login</div>
+          <div className="expandIcon">
+            <ExpandMoreIcon />
+          </div>
+        </button>
+        <button className="cartButton">
+          <ShoppingCartOutlinedIcon />
+        </button>
+        <button className="cartButton">
+          <StorefrontOutlinedIcon />
+          <div>Become a seller</div>
+        </button>
+        <button className="moreOptions">
+          <MoreVertOutlinedIcon />
+        </button>
+      </div>
     </Box>
   );
 };

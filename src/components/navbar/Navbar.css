@@ -1,30 +1,48 @@
+@import url("https://fonts.googleapis.com/css2?family=Dhurjati&family=Inter:wght@200&display=swap");
 
-  @import url('https://fonts.googleapis.com/css2?family=Dhurjati&family=Inter:wght@200&display=swap');
-
-*,::after,::before{
+*,
+::after,
+::before {
   box-sizing: border-box;
 }
-
-.icon,.searchInput{
+.iconContainer{
+  margin-right: 36px;
+}
+.icon,
+.searchInput,
+.loginButton {
   padding: 8px 8px 8px 12px;
+}
+.moreOptions{
+  padding: 8px;
 }
 .logo {
   width: 4rem;
   border-radius: 15%;
 }
-.searchInput{
+.searchInput {
   width: 100%;
   background: 0 0;
   outline: 0;
   box-shadow: none;
   resize: none;
- border: 0;
+  border: 0;
 }
-.navItems {
+.nav-items {
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  border: 1px solid transparent;
+  box-sizing: border-box;
+  height: 40px;
+  padding: 0 6px;
+  gap: 8px;
+ 
 }
+/* .nav-items svg{
+  padding: ;
+} */
 .search {
-  min-width: 200px;
   height: 40px;
   cursor: pointer;
   background-color: transparent;
@@ -33,14 +51,42 @@
   position: relative;
   border-radius: 8px;
   background-color: #f0f5ff;
-
 }
-.searchInput::placeholder{
-  font-family: inter_regular,fallback-inter_regular,Arial,sans-serif;
+.searchInput::placeholder {
+  font-family: inter_regular, fallback-inter_regular, Arial, sans-serif;
   font-size: 16px;
   font-weight: 300;
 }
-.searchForm{
+.searchForm {
   display: flex;
-  width:100%
+  width: 100%;
+}
+.loginButton,.cartButton,.moreOptions {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  color: black;
+  font-size: 16px;
+  line-height: 24px;
+  height: 40px;
+  border: 0;
+  background-color: transparent;
+  padding: 0 20px;
+}
+
+.loginButton:hover {
+  background-color: #2a55e5;
+  border-radius: 8px;
+  fill: #f0f5ff;
+  color: white;
+}
+.loginButton:hover .expandIcon {
+  transform: rotate(-180deg);
+  transition: transform 0.3s ease-in-out;
+}
+.expandIcon {
+  padding-top: 8px;
+}
+.loginButton,.cartButton{
+  padding: 0 6px;
 }

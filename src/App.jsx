@@ -2,7 +2,7 @@ import { useState } from "react";
 import "./App.css";
 import { CssBaseline, ThemeProvider, createTheme } from "@mui/material";
 import Navbar from "./components/navbar/Navbar";
-import OfferCarousel from "./components/carousel/Carousel";
+// import OfferCarousel from "./components/carousel/Carousel";
 
 function App() {
   const [mode, setMode] = useState("light");
@@ -15,12 +15,12 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <nav>
+      <header className="navbar" >
         <Navbar mode={mode} setMode={setMode} />
-      </nav>
-      <body>
+      </header>
+      {/* <body>
         <OfferCarousel />
-      </body>
+      </body> */}
     </ThemeProvider>
   );
 }
