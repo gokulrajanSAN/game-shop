@@ -1,0 +1,26 @@
+.loginMenuContainer{
+    position: absolute;
+    top: 100%;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    background-color: #fff;
+    border: 1px solid #f0f0f0;
+    min-width: 100px;
+    width: 200px;
+    box-shadow: 0 4px 16px 0 rgb(0 0 0/20%);
+    z-index: 100;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+.loginMenuSignUp{
+    width: 100%;
+    padding: 12px;
+    border-bottom: 1px solid #e0e0e0;
+    font-size: 16px;
+    line-height: 24px;
+    text-decoration: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

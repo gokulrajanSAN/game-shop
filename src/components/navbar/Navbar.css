@@ -5,15 +5,28 @@
 ::before {
   box-sizing: border-box;
 }
-.iconContainer{
-  margin-right: 36px;
+
+@media (min-width: 768px) and (max-width: 1191px) {
+  .navContainer {
+    padding: 12px;
+    max-width: 1600px;
+  }
 }
+.navContainer {
+  display: flex;
+  padding: 12px;
+  justify-content: space-around;
+  width: 100%;
+  min-width: 48rem;
+  gap: 1.2rem;
+}
+
 .icon,
 .searchInput,
 .loginButton {
   padding: 8px 8px 8px 12px;
 }
-.moreOptions{
+.moreOptions {
   padding: 8px;
 }
 .logo {
@@ -35,13 +48,10 @@
   border: 1px solid transparent;
   box-sizing: border-box;
   height: 40px;
-  padding: 0 6px;
   gap: 8px;
- 
+  position: relative;
 }
-/* .nav-items svg{
-  padding: ;
-} */
+
 .search {
   height: 40px;
   cursor: pointer;
@@ -51,6 +61,8 @@
   position: relative;
   border-radius: 8px;
   background-color: #f0f5ff;
+  min-width: 9rem;
+  max-width: 40rem;
 }
 .searchInput::placeholder {
   font-family: inter_regular, fallback-inter_regular, Arial, sans-serif;
@@ -59,9 +71,10 @@
 }
 .searchForm {
   display: flex;
-  width: 100%;
 }
-.loginButton,.cartButton,.moreOptions {
+.loginButton,
+.cartButton,
+.moreOptions {
   display: flex;
   gap: 8px;
   align-items: center;
@@ -86,7 +99,4 @@
 }
 .expandIcon {
   padding-top: 8px;
-}
-.loginButton,.cartButton{
-  padding: 0 6px;
 }

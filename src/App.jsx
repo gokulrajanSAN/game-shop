@@ -2,6 +2,7 @@ import { useState } from "react";
 import "./App.css";
 import { CssBaseline, ThemeProvider, createTheme } from "@mui/material";
 import Navbar from "./components/navbar/Navbar";
+import LoginMenu from "./components/navbar/LoginMenu";
 // import OfferCarousel from "./components/carousel/Carousel";
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
       <header className="navbar" >
         <Navbar mode={mode} setMode={setMode} />
       </header>
+      <LoginMenu/>
       {/* <body>
         <OfferCarousel />
       </body> */}

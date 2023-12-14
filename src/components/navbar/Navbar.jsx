@@ -1,5 +1,5 @@
 /* eslint-disable react/no-unknown-property */
-import { Box, IconButton } from "@mui/material";
+import { IconButton } from "@mui/material";
 import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
@@ -7,6 +7,7 @@ import StorefrontOutlinedIcon from "@mui/icons-material/StorefrontOutlined";
 import MoreVertOutlinedIcon from "@mui/icons-material/MoreVertOutlined";
 import "./Navbar.css";
 import SearchIcon from "@mui/icons-material/Search";
+import LoginMenu from "./LoginMenu";
 
 const Logo = () => (
   <svg
@@ -139,12 +140,7 @@ const Logo = () => (
 
 const Navbar = () => {
   return (
-    <Box
-      sx={{
-        display: "flex",
-        padding: "12px",
-      }}
-    >
+    <div className="navContainer">
       <div className="iconContainer">
         <Logo />
       </div>
@@ -156,8 +152,6 @@ const Navbar = () => {
           <input
             className="searchInput"
             placeholder="Search for Products, Brands and More"
-            disableUnderline
-            sx={{ height: "40px", width: "100%" }}
           />
         </form>
       </div>
@@ -168,7 +162,9 @@ const Navbar = () => {
           <div className="expandIcon">
             <ExpandMoreIcon />
           </div>
+          <LoginMenu />
         </button>
+ 
         <button className="cartButton">
           <ShoppingCartOutlinedIcon />
         </button>
@@ -180,7 +176,7 @@ const Navbar = () => {
           <MoreVertOutlinedIcon />
         </button>
       </div>
-    </Box>
+    </div>
   );
 };
 
