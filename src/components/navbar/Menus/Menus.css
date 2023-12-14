@@ -1,0 +1,59 @@
+.loginMenuContainer,
+.MoreMenuContainer {
+  position: absolute;
+  top: 100%;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  background-color: #fff;
+  border: 1px solid #f0f0f0;
+  min-width: 100px;
+  width: 280px;
+  box-shadow: 0 4px 16px 0 rgb(0 0 0/20%);
+  z-index: 100;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  box-sizing: border-box;
+}
+.loginMenuContainer {
+  left: -15%;
+}
+.MoreMenuContainer {
+  right: 0;
+  width: 230px;
+}
+.loginMenuSignUp {
+  width: 100%;
+  padding: 12px;
+  border-bottom: 1px solid #e0e0e0;
+  font-size: 16px;
+  line-height: 24px;
+  text-decoration: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.menuItemsContainer,
+span {
+  color: #000;
+  text-decoration: none;
+  text-align: center;
+  font-size: 14px;
+  line-height: 20px;
+  cursor: pointer;
+}
+.menuItemsContainer li {
+  padding: 8px 12px;
+}
+button {
+  all: unset;
+}
+.menuItems {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+}
+.iconDiv {
+  width: 18px;
+  height: 18px;
+}

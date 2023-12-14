@@ -1,15 +1,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Dhurjati&family=Inter:wght@200&display=swap");
 
-*,
-::after,
-::before {
-  box-sizing: border-box;
-}
-
 @media (min-width: 768px) and (max-width: 1191px) {
   .navContainer {
     padding: 12px;
     max-width: 1600px;
+  }
+}
+@media (min-width:300px) and (max-width:1100px) {
+  .seller{
+    display:none
   }
 }
 .navContainer {
@@ -28,6 +27,11 @@
 }
 .moreOptions {
   padding: 8px;
+}
+.moreOptions:hover{
+  background: #fafafa;
+  border-radius: 8px;
+  border: 1px solid  #e0e0e0;
 }
 .logo {
   width: 4rem;
@@ -100,4 +104,7 @@
 }
 .expandIcon {
   padding-top: 8px;
+}
+.seller{
+  min-width: 120px;
 }

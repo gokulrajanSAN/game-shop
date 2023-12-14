@@ -1,4 +1,5 @@
 /* eslint-disable react/no-unknown-property */
+import { useState } from "react";
 import { IconButton } from "@mui/material";
 import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
@@ -7,7 +8,9 @@ import StorefrontOutlinedIcon from "@mui/icons-material/StorefrontOutlined";
 import MoreVertOutlinedIcon from "@mui/icons-material/MoreVertOutlined";
 import "./Navbar.css";
 import SearchIcon from "@mui/icons-material/Search";
-import LoginMenu from "./LoginMenu";
+import { LoginMenu, MoreMenu } from "./Menus/Menus";
+
+
 
 const Logo = () => (
   <svg
@@ -139,6 +142,8 @@ const Logo = () => (
 );
 
 const Navbar = () => {
+  const [openLoginMenu,setOpenLoginMenu] = useState(false);
+  const [openMoreMenu,setOpenMoreMenu] = useState(false);
   return (
     <div className="navContainer">
       <div className="iconContainer">
@@ -156,25 +161,26 @@ const Navbar = () => {
         </form>
       </div>
       <div className="nav-items">
-        <button className="loginButton">
+        <a onMouseEnter={()=>setOpenLoginMenu(true)} onMouseLeave={()=>setOpenLoginMenu(false)} className="loginButton">
           <AccountCircleOutlinedIcon className="accountIcon" />
           <div className="longText"> Login</div>
           <div className="expandIcon">
             <ExpandMoreIcon />
           </div>
-          <LoginMenu />
-        </button>
+        { openLoginMenu && <LoginMenu />}
+        </a>
  
-        <button className="cartButton">
+        <a className="cartButton">
           <ShoppingCartOutlinedIcon />
-        </button>
-        <button className="cartButton">
+        </a>
+        <a className="cartButton">
           <StorefrontOutlinedIcon />
-          <div>Become a seller</div>
-        </button>
-        <button className="moreOptions">
+          <div className="seller">Become a seller</div>
+        </a>
+        <div onMouseEnter={()=>setOpenMoreMenu(true)} onMouseLeave={()=>setOpenMoreMenu(false)} className="moreOptions">
           <MoreVertOutlinedIcon />
-        </button>
+          {openMoreMenu && <MoreMenu/>}
+        </div>
       </div>
     </div>
   );
