@@ -22,75 +22,75 @@ const images = [
     imgPath:
       "https://rukminim1.flixcart.com/fk-p-flap/1600/270/image/09158220c9cec620.jpeg?q=20",
   },
+  {
+    label: "Zebronics",
+    imgPath:
+      "https://rukminim1.flixcart.com/fk-p-flap/1600/270/image/b8e07ff39439d998.jpg?q=20",
+  },
 ];
 
 const OfferCarousel = () => {
-  const [index, setIndex] = useState(0);
-  const [startSlide, setStartSlide] = useState(true);
-  const slideshow = () => {
-    if (startSlide) {
-      setTimeout(() => {
-        if (index < images?.length - 1) {
-          let newIndex = index;
-          setIndex(newIndex + 1);
-        } else {
-          setIndex(0);
-        }
-      }, 2000);
-    }
-  };
-
-  const currentSlide = (n) => {
-    setStartSlide(false);
-    setIndex(n);
-  };
+  const [currentSlide, setslide] = useState({ slide: 0, direction: "forward" });
 
   useEffect(() => {
-    slideshow();
-  }, [index]);
-  return (
-    <>
-      <div className="slideshow-container">
-        <div className=" fade">
-          <img
-            src={images[index]?.imgPath}
-            style={{ width: "100%", height: "300px",
-            transition: '799ms ease-in-out'}}
-          />
-        </div>
-  
-        <br />
-        {index != 0 && (
-          <a className="prev" onClick={() => currentSlide(index - 1)}>
-            ❮
-          </a>
-        )}
-        {index + 1 < images?.length && (
-          <a className="next" onClick={() => currentSlide(index + 1)}>
-            ❯
-          </a>
-        )}
-      </div>
-      <br />
+    setTimeout(() => {
+      if (currentSlide.direction === "forward") {
+        if (currentSlide.slide === 4) {
+          setslide({ slide: 3, direction: "b" });
+        } else {
+          setslide({ ...currentSlide, slide: currentSlide.slide + 1 });
+        }
+      } else {
+        if (currentSlide.slide === 0) {
+          setslide({ slide: 1, direction: "forward" });
+        } else {
+          setslide({ ...currentSlide, slide: currentSlide.slide - 1 });
+        }
+      }
+    }, 2900);
+  }, [currentSlide.slide]);
 
-      <div style={{ textAlign: "center" }}>
-        {images.map((category) => {
-          return (
-            <>
-              <span
-                key={index}
-                style={{
-                  backgroundColor:
-                    index + 1 === category?.id ? "black" : "grey",
-                }}
-                className="dot"
-                onClick={() => currentSlide(category?.id - 1)}
-              ></span>
-            </>
-          );
-        })}
+  return (
+    <div className="carousel">
+      <button style={{ left: 0 }} className="changeButton">
+        <span className="arrow"></span>
+      </button>
+      <button style={{ right: 0 }} className="changeButton">
+        <span className="right"></span>
+      </button>
+      {images.map((img) => (
+        <img
+          alt={img.label}
+          key={img.label}
+          src={img.imgPath}
+          style={{
+            translate: `${-100 * currentSlide.slide}%`,
+            transition: "999ms ease-in-out",
+            width: "100%",
+          }}
+        />
+      ))}
+      <div className="slider">
+        <div className="circleContainer">
+          <div className="circleLayout">
+            {Array(images.length)
+              .fill(0)
+              .map((num, i) => (
+                <div key={i} className="circle" />
+              ))}
+            <div
+              className="worm"
+              style={{
+                transform: `translateX(${
+                  currentSlide.slide * 12
+                }px) scaleX(1) `,
+                transition: "all 999ms ease-in-out",
+              }}
+            />
+          </div>
+        </div>
       </div>
-    </>
+    </div>
   );
 };
 

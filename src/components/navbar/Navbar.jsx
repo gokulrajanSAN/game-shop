@@ -1,6 +1,5 @@
 /* eslint-disable react/no-unknown-property */
 import { useState } from "react";
-import { IconButton } from "@mui/material";
 import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
@@ -9,8 +8,6 @@ import MoreVertOutlinedIcon from "@mui/icons-material/MoreVertOutlined";
 import "./Navbar.css";
 import SearchIcon from "@mui/icons-material/Search";
 import { LoginMenu, MoreMenu } from "./Menus/Menus";
-
-
 
 const Logo = () => (
   <svg
@@ -142,8 +139,8 @@ const Logo = () => (
 );
 
 const Navbar = () => {
-  const [openLoginMenu,setOpenLoginMenu] = useState(false);
-  const [openMoreMenu,setOpenMoreMenu] = useState(false);
+  const [openLoginMenu, setOpenLoginMenu] = useState(false);
+  const [openMoreMenu, setOpenMoreMenu] = useState(false);
   return (
     <div className="navContainer">
       <div className="iconContainer">
@@ -151,9 +148,9 @@ const Navbar = () => {
       </div>
       <div className="search">
         <form className="searchForm">
-          <IconButton className="icon">
+          <button className="icon">
             <SearchIcon />
-          </IconButton>
+          </button>
           <input
             className="searchInput"
             placeholder="Search for Products, Brands and More"
@@ -161,25 +158,36 @@ const Navbar = () => {
         </form>
       </div>
       <div className="nav-items">
-        <a onMouseEnter={()=>setOpenLoginMenu(true)} onMouseLeave={()=>setOpenLoginMenu(false)} className="loginButton">
+        <a
+          onMouseEnter={() => setOpenLoginMenu(true)}
+          onMouseLeave={() => setOpenLoginMenu(false)}
+          className="loginButton"
+        >
           <AccountCircleOutlinedIcon className="accountIcon" />
           <div className="longText"> Login</div>
           <div className="expandIcon">
             <ExpandMoreIcon />
           </div>
-        { openLoginMenu && <LoginMenu />}
+          {openLoginMenu && <LoginMenu />}
         </a>
- 
+
         <a className="cartButton">
           <ShoppingCartOutlinedIcon />
+          <div className="cartText menuText">Cart</div>
         </a>
         <a className="cartButton">
           <StorefrontOutlinedIcon />
-          <div className="seller">Become a seller</div>
+          <div className="menuText">Become a seller</div>
         </a>
-        <div onMouseEnter={()=>setOpenMoreMenu(true)} onMouseLeave={()=>setOpenMoreMenu(false)} className="moreOptions">
-          <MoreVertOutlinedIcon />
-          {openMoreMenu && <MoreMenu/>}
+        <div
+          onMouseEnter={() => setOpenMoreMenu(true)}
+          onMouseLeave={() => setOpenMoreMenu(false)}
+          className="moreOptions"
+        >
+          <div className="moreOptions innerMoreOptions">
+            <MoreVertOutlinedIcon />
+            {openMoreMenu && <MoreMenu />}
+          </div>
         </div>
       </div>
     </div>
