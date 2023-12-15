@@ -37,17 +37,24 @@
   border-radius: 3px;
   background-color: rgb(255, 255, 255);
 }
+@media (min-width:950px) {
+  .prevButton,
+  .nextButton{
+    display: none;
+  } 
+}
 .prevButton,
 .nextButton {
   display: flex;
   position: absolute;
   width: 40px;
   background-color: #fff;
-  height: 88px;
+  height:7.3rem ;
   top: 0;
   bottom: 0;
   margin: auto 0;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.12);
+  cursor: pointer;
   z-index: 1;
 }
 .prevButton {

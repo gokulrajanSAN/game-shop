@@ -31,12 +31,25 @@ const images = [
 
 const OfferCarousel = () => {
   const [currentSlide, setslide] = useState({ slide: 0, direction: "forward" });
-
+  const handlePrev = () => {
+    if (currentSlide.slide > 0) {
+      setslide({ ...currentSlide, slide: currentSlide.slide - 1 });
+    } else {
+      setslide({ ...currentSlide, slide: images.length - 1 });
+    }
+  };
+  const handleNext = () => {
+    if (currentSlide.slide < images.length - 1) {
+      setslide({ ...currentSlide, slide: currentSlide.slide + 1 });
+    } else {
+      setslide({ ...currentSlide, slide: 0});
+    }
+  };
   useEffect(() => {
-    setTimeout(() => {
+    const timeOut = setTimeout(() => {
       if (currentSlide.direction === "forward") {
-        if (currentSlide.slide === 4) {
-          setslide({ slide: 3, direction: "b" });
+        if (currentSlide.slide === images.length - 1) {
+          setslide({ slide: images.length - 2, direction: "b" });
         } else {
           setslide({ ...currentSlide, slide: currentSlide.slide + 1 });
         }
@@ -48,15 +61,18 @@ const OfferCarousel = () => {
         }
       }
     }, 2900);
+    return () => {
+      clearTimeout(timeOut);
+    };
   }, [currentSlide.slide]);
 
   return (
     <div className="carousel">
-      <button className="prevButton">
-        <span className="arrow prevArrow"></span>
+      <button className="prevButton" onClick={handlePrev}>
+        <span className="arrow prevArrow" />
       </button>
-      <button className="nextButton">
-        <span className="arrow"></span>
+      <button className="nextButton" onClick={handleNext}>
+        <span className="arrow" />
       </button>
       {images.map((img) => (
         <img
