@@ -52,11 +52,11 @@ const OfferCarousel = () => {
 
   return (
     <div className="carousel">
-      <button style={{ left: 0 }} className="changeButton">
-        <span className="arrow"></span>
+      <button className="prevButton">
+        <span className="arrow prevArrow"></span>
       </button>
-      <button style={{ right: 0 }} className="changeButton">
-        <span className="right"></span>
+      <button className="nextButton">
+        <span className="arrow"></span>
       </button>
       {images.map((img) => (
         <img

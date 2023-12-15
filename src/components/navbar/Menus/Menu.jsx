@@ -8,7 +8,7 @@ import NotificationsNoneOutlinedIcon from "@mui/icons-material/NotificationsNone
 import HeadsetMicOutlinedIcon from "@mui/icons-material/HeadsetMicOutlined";
 import TrendingUpOutlinedIcon from "@mui/icons-material/TrendingUpOutlined";
 import FileDownloadOutlinedIcon from "@mui/icons-material/FileDownloadOutlined";
-import "./Menus.css";
+import "./Menu.css";
 const MenuItems = [
   { name: "My Profile", icon: <AccountCircleOutlined /> },
   { name: "Plus Zone", icon: <AddIcon /> },

@@ -7,7 +7,7 @@ import StorefrontOutlinedIcon from "@mui/icons-material/StorefrontOutlined";
 import MoreVertOutlinedIcon from "@mui/icons-material/MoreVertOutlined";
 import "./Navbar.css";
 import SearchIcon from "@mui/icons-material/Search";
-import { LoginMenu, MoreMenu } from "./Menus/Menus";
+import { LoginMenu, MoreMenu } from "./Menus/Menu";
 
 const Logo = () => (
   <svg

@@ -37,7 +37,8 @@
   border-radius: 3px;
   background-color: rgb(255, 255, 255);
 }
-.changeButton {
+.prevButton,
+.nextButton {
   display: flex;
   position: absolute;
   width: 40px;
@@ -49,8 +50,17 @@
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.12);
   z-index: 1;
 }
-
-.arrow::before {
+.prevButton {
+  left: 0;
+  border-radius: 0 4px 4px 0;
+}
+.arrow{
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: scale(1) translateY(-50%);
+}
+.arrow::before{
   content: "";
   position: relative;
   border-color: #878787;
@@ -59,16 +69,13 @@
   display: inline-block;
   height: 6px;
   width: 6px;
-  position: absolute;
-  right: 16px;
-  top: 50%;
-  transform: scale(1) translateY(-50%);
+  transform: rotate(45deg);
 }
-.arrow::after {
+.arrow.prevArrow::before{
+  transform: rotate(225deg);
 }
-.left {
-  left: 0;
-  border-radius: 0 4px 4px 0;
+.nextButton {
+  right: 0;
+  border-radius: 4px 0 0 4px;
 }
-.right {
-}
+
