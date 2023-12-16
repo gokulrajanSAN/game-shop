@@ -1,0 +1,88 @@
+.carousel {
+  display: flex;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+.slider {
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  height: 10px;
+}
+.circleContainer {
+  display: flex;
+  background-color: rgba(0, 0, 0, 0);
+  padding: 0px;
+  justify-content: center;
+}
+.circleLayout {
+  display: flex;
+  background-color: rgba(40, 36, 36, 0.2);
+  padding: 2px 6px;
+  border-radius: 6px;
+  width: fit-content;
+}
+.circle {
+  background-color: rgb(169, 169, 169);
+  margin: 0px 3px;
+  height: 6px;
+  width: 6px;
+  border-radius: 3px;
+}
+.worm {
+  position: absolute;
+  height: 6px;
+  width: 10px;
+  border-radius: 3px;
+  background-color: rgb(255, 255, 255);
+}
+@media (min-width:950px) {
+  .prevButton,
+  .nextButton{
+    display: none;
+  } 
+}
+.prevButton,
+.nextButton {
+  display: flex;
+  position: absolute;
+  width: 40px;
+  background-color: #fff;
+  height:5rem ;
+  top: 0;
+  bottom: 0;
+  margin: auto 0;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.12);
+  cursor: pointer;
+  z-index: 1;
+}
+.prevButton {
+  left: 0;
+  border-radius: 0 4px 4px 0;
+}
+.arrow{
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: scale(1) translateY(-50%);
+}
+.arrow::before{
+  content: "";
+  position: relative;
+  border-color: #878787;
+  border-style: solid;
+  border-width: 2px 2px 0 0;
+  display: inline-block;
+  height: 6px;
+  width: 6px;
+  transform: rotate(45deg);
+}
+.arrow.prevArrow::before{
+  transform: rotate(225deg);
+}
+.nextButton {
+  right: 0;
+  border-radius: 4px 0 0 4px;
+}
+

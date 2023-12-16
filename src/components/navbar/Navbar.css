@@ -1,18 +1,112 @@
-.container {
 
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: auto;
-    height: 4rem;
-    background-color: burlywood;
+@media (min-width: 768px) and (max-width: 1191px) {
+  .navContainer {
+    padding: 12px;
+    max-width: 1600px;
+  }
+}
+@media (min-width: 300px) and (max-width: 1100px) {
+  .menuText {
+    display: none;
+  }
+}
+.navContainer {
+  display: flex;
+  padding: 12px;
+  justify-content: space-around;
+  width: 100%;
+  min-width: 25rem;
+  gap: 1.2rem;
 }
 
+.icon,
+.searchInput,
+.loginButton {
+  padding: 8px 8px 8px 12px;
+}
+
+.moreOptions:hover .innerMoreOptions {
+  background: #fafafa;
+  border: 1px solid #e0e0e0;
+}
 .logo {
-    /* height: 4rem; */
-    width: 4rem;
+  width: 4rem;
+  border-radius: 15%;
+}
+.searchInput {
+  width: 100%;
+  background: 0 0;
+  outline: 0;
+  box-shadow: none;
+  resize: none;
+  border: 0;
+}
+.nav-items {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  border: 1px solid transparent;
+  box-sizing: border-box;
+  height: 40px;
+  gap: 8px;
+  position: relative;
 }
 
-.navItems {
-    
+.search {
+  height: 40px;
+  cursor: pointer;
+  background-color: transparent;
+  display: inline-block;
+  width: 100%;
+  position: relative;
+  border-radius: 8px;
+  background-color: #f0f5ff;
+  min-width: 9rem;
+  max-width: 40rem;
+}
+.searchInput::placeholder {
+  font-size: 16px;
+  font-weight: 300;
+}
+.searchForm {
+  display: flex;
+  width: 100%;
+}
+.loginButton,
+.cartButton,
+.moreOptions {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  color: black;
+  font-size: 16px;
+  line-height: 24px;
+  height: 40px;
+  border:0;
+  background-color: transparent;
+  padding: 0 20px;
+}
+.moreOptions {
+  padding: 8px;
+  border-radius: 8px;
+  border: 1px solid transparent;
+}
+.loginButton:hover {
+  background-color: #2a55e5;
+  border-radius: 8px;
+  fill: #f0f5ff;
+  color: white;
+}
+.loginButton:hover .expandIcon {
+  transform: rotate(-180deg);
+  transition: transform 0.3s ease-in-out;
+}
+.expandIcon {
+  padding-top: 8px;
+}
+.menuText {
+  min-width: 120px;
+}
+.cartText{
+  min-width: auto
 }

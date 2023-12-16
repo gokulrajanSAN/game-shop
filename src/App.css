@@ -1,0 +1,37 @@
+*,
+::after,
+::before {
+  box-sizing: border-box;
+}
+body {
+  padding: 0;
+  margin: 0;
+}
+.navbar {
+  justify-content: center;
+  background-color: #fff;
+}
+.body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 8px 16px;
+  gap: 10px;
+}
+.container {
+  background-color: rgb(241, 242, 244);
+  padding-bottom: 0px;
+  padding-top: 0px;
+}
+.bankDiscount {
+  width: 100%;
+  margin: auto;
+  display: block;
+  inset: 0px;
+  padding: inherit;
+  object-fit: cover;
+  aspect-ratio: 139 / 12;
+}
+.bankDiscount img {
+  width: 100%;
+}
