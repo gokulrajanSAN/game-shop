@@ -1,7 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Dhurjati&family=Inter:wght@200&display=swap");
-* {
-  font-family: inter_regular, fallback-inter_regular, Arial, sans-serif;
-}
+
 @media (min-width: 768px) and (max-width: 1191px) {
   .navContainer {
     padding: 12px;
@@ -18,7 +15,7 @@
   padding: 12px;
   justify-content: space-around;
   width: 100%;
-  min-width: 48rem;
+  min-width: 25rem;
   gap: 1.2rem;
 }
 

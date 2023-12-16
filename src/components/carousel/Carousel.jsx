@@ -27,37 +27,49 @@ const images = [
     imgPath:
       "https://rukminim1.flixcart.com/fk-p-flap/1600/270/image/b8e07ff39439d998.jpg?q=20",
   },
+  {
+    label:"Poco",
+    imgPath:"https://rukminim1.flixcart.com/fk-p-flap/1600/270/image/9c3843ee9ca4c2e7.jpg?q=20"
+  },
+  {
+    label:"Year end",
+    imgPath:"https://rukminim1.flixcart.com/fk-p-flap/1600/270/image/2c7142dcb842dc4b.jpeg?q=20"
+  },
+  {
+    label:"Samsung F14",
+    imgPath:"https://rukminim1.flixcart.com/fk-p-flap/1600/270/image/7e6f7f22ab2b746f.jpg?q=20"
+  }
 ];
 
 const OfferCarousel = () => {
-  const [currentSlide, setslide] = useState({ slide: 0, direction: "forward" });
+  const [currentSlide, setCurrentSlide] = useState({ slide: 0, direction: "forward" });
   const handlePrev = () => {
     if (currentSlide.slide > 0) {
-      setslide({ ...currentSlide, slide: currentSlide.slide - 1 });
+      setCurrentSlide({ ...currentSlide, slide: currentSlide.slide - 1 });
     } else {
-      setslide({ ...currentSlide, slide: images.length - 1 });
+      setCurrentSlide({ ...currentSlide, slide: images.length - 1 });
     }
   };
   const handleNext = () => {
     if (currentSlide.slide < images.length - 1) {
-      setslide({ ...currentSlide, slide: currentSlide.slide + 1 });
+      setCurrentSlide({ ...currentSlide, slide: currentSlide.slide + 1 });
     } else {
-      setslide({ ...currentSlide, slide: 0});
+      setCurrentSlide({ ...currentSlide, slide: 0});
     }
   };
   useEffect(() => {
     const timeOut = setTimeout(() => {
       if (currentSlide.direction === "forward") {
         if (currentSlide.slide === images.length - 1) {
-          setslide({ slide: images.length - 2, direction: "b" });
+          setCurrentSlide({ slide: images.length - 2, direction: "backward" });
         } else {
-          setslide({ ...currentSlide, slide: currentSlide.slide + 1 });
+          setCurrentSlide({ ...currentSlide, slide: currentSlide.slide + 1 });
         }
       } else {
         if (currentSlide.slide === 0) {
-          setslide({ slide: 1, direction: "forward" });
+          setCurrentSlide({ slide: 1, direction: "forward" });
         } else {
-          setslide({ ...currentSlide, slide: currentSlide.slide - 1 });
+          setCurrentSlide({ ...currentSlide, slide: currentSlide.slide - 1 });
         }
       }
     }, 2900);
