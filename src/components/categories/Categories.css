@@ -4,11 +4,6 @@
     justify-content: normal;
 }
 }
-@media (max-width: 650px){
-    .text {
-       font-weight: 600;
-    }
-}
 .categoriesContainer {
   min-width: 90px;
   cursor: pointer;
@@ -56,6 +51,7 @@
   align-items: center;
   justify-content: center;
   line-height: 16px;
+  font-weight: 600;
 }
 .imgContainer {
   position: relative;

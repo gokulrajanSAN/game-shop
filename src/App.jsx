@@ -14,6 +14,12 @@ function App() {
       <div className="body">
         <Categories />
         <OfferCarousel />
+        <div className="bankDiscount">
+          <img
+            alt="bank-discount"
+            src="https://rukminim1.flixcart.com/fk-p-flap/1600/140/image/065bf4ed0fee4532.jpg?q=20"
+          />
+        </div>
       </div>
     </div>
   );
